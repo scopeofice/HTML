@@ -1,0 +1,11 @@
+# Use a base image with a web server
+FROM nginx:alpine
+
+# Copy your HTML files to the appropriate directory in the container
+COPY index.html /usr/share/nginx/html/
+
+# Expose the default HTTP port (usually 80)
+EXPOSE 80
+
+# Start the web server when the container is run
+CMD ["nginx", "-g", "daemon off;"]

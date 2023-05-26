@@ -3,6 +3,43 @@
 <head>
     <title>scopeofice</title>
 	<style>
+		div{
+		}
+		#mydiv{
+			width: 20px;
+			height: 20px;
+			animation: animation1;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+			background-color: aliceblue;
+		}
+		@keyframes animation1 {
+0%{
+margin-left: 10px;
+}
+/* 25%{
+	margin-bottom: 25%;
+}
+50%{
+margin: 50%;
+}
+75%{
+	margin-left: 75%;
+} */
+50%{
+	margin-left: 100%;
+}
+
+
+		/* from{
+			margin-left: 10px;
+		}
+		to{
+			margin-left: 100%;
+		}	 */
+		}
+
+
 		a:link,a:visited{
 			background-color: rgb(0, 0, 0);
 			color: black;
@@ -12,19 +49,14 @@
 		}
 		a:hover, a:active{
 			background-color: rgba(141, 141, 141, 0.671);
+			transform: scale(1.1);
 		}
 	</style>
 
-	<!-- <style>
-        h1{color: blue;font-family: Verdana;font-size: 300%;}
-        h2{color: #ffd900;font-family: Verdana;font-size: 300%;}
-        h3{color: rgb(0, 255, 21);font-family: Verdana;font-size: 300%;}
-        p{color: brown;font-family: 'Courier New';font-size: 160%;}
-        pre{color: red;font-family: Arial;font-size: 200%;}
-    </style> -->
 	<a name="rex"></a>
 </head>
 <body style="background-color: rgba(0, 0, 0, 0.932);">
+	<div id="mydiv"><img src="./Screenshot_2020-01-01-12-33-47-57 (2).png" alt="sp" width="30px"></div>
 <h1 style="border: 2px solid greenyellow;color: greenyellow;"align="center">Welcome</h1>
 <h2 style="border: 2px solid yellow;color: yellow;"align="center">You Have Reached Scopeofice</h2>
 <a href="https://leetcode.com/scopeofice/" target="_blank" style="border: 2px solid gold;color: gold;padding: 5px ">MyLeetCodes</a>
@@ -37,9 +69,9 @@
 <h3 style="border: 2px solid blue;color: blue;"align="center">Scopeofice</h3>
 <p style="border: 2px solid aqua;color: aqua; font-size: larger;font-family: Verdana, Geneva, Tahoma, sans-serif;"align="center">Watch</p>
 <h1 style="border:2px solid Tomato;color: Tomato;" align="center" >Dream On</h1>
-
+<div style="justify-content: center; display: flex;border: 2px solid gray;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8wysIxzqgPI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+</div>
 <div style="justify-content: center; display: flex;">
 <video width="400" controls>
 	<source src="./Aerosmith - Dream On (Live At Capitol Center, Largo, MD - November 9, 1978).mp4" type="video/ogg">
