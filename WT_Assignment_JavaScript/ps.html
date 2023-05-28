@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Employee Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Employee Details</caption>
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody"></tbody>
+    </table>
+
+    <script>
+        var employees = [
+            { empid: 1, ename: "John Doe", salary: 50000 },
+            { empid: 2, ename: "Jane Smith", salary: 60000 },
+            { empid: 3, ename: "Mike Johnson", salary: 55000 },
+            { empid: 4, ename: "Sarah Williams", salary: 65000 }
+        ];
+
+        var tableBody = document.getElementById("employeeTableBody");
+
+        employees.forEach(function(employee) {
+            var row = document.createElement("tr");
+
+            var empidCell = document.createElement("td");
+            empidCell.textContent = employee.empid;
+            row.appendChild(empidCell);
+
+            var enameCell = document.createElement("td");
+            enameCell.textContent = employee.ename;
+            row.appendChild(enameCell);
+
+            var salaryCell = document.createElement("td");
+            salaryCell.textContent = employee.salary;
+            row.appendChild(salaryCell);
+
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>

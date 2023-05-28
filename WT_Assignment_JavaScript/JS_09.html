@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Compound Intrest</title>
+        <script>
+           function calculateCompoundIntrest(){
+            // alert("calci")
+                var flag1=validatePrincipal(document.getElementById('principal').value);
+                var flag2=validateRate(document.getElementById('rate').value);
+                var flag3=validatePeriod(document.getElementById('years').value);
+
+                if(flag1 && flag2 && flag3){
+                    var p=document.getElementById('principal').value;
+                    var r=document.getElementById('rate').value;
+                    var n=document.getElementById('years').value;
+                    var rn=1;
+                    for(var i=1;i<=n;i++){
+                        rn*=(1+r/100);
+                    }
+                    var ci=Math.floor((p*rn)-p);
+                    document.getElementById('mydiv').innerHTML="Compound Intrest = Rs."+ci;
+                }
+
+            }
+            function validatePrincipal(num){
+                if(num==="" || isNaN(num)){
+                    document.getElementById('err1').innerHTML="Enter valid Principal Amount";
+                    return false;
+                }
+                document.getElementById('err1').innerHTML="";
+                return true;
+            }
+            function validateRate(num){
+                if(num==="" || isNaN(num)){
+                    document.getElementById('err2').innerHTML="Enter valid Intrest Rate";
+                    return false;
+                }
+                document.getElementById('err2').innerHTML="";
+                return true;
+            }
+            function validatePeriod(num){
+                if(num==="" || isNaN(num)){
+                    document.getElementById('err3').innerHTML="Enter valid number of Years";
+                    return false;
+                }
+                document.getElementById('err3').innerHTML="";
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Calculate Compound Intrest</legend><br>
+            <form name="calci">
+                Enter Principal : <input type="text" name="principal" id="principal"><span>*</span><span id="err1"></span><br>
+                Enter Rate : <input type="text" name="rate" id="rate"><span>*</span><span id="err2"></span><br>
+                Enter Period : <input type="text" name="year" id="years"><span>*</span><span id="err3"></span><br>
+                <button type="button" onclick="calculateCompoundIntrest()">Calculate</button><br>
+            </form>
+            <div id="mydiv"></div>
+        </fieldset>
+    </body>
+</html>

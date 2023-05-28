@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Searching</title>
+        <script>
+            function searchText() {
+                var searchInput = document.getElementById("search").value.toLowerCase();
+                var divElements = document.getElementsByTagName("div");
+
+                for (var i = 0; i < divElements.length; i++) {
+                    var divContent = divElements[i].textContent.toLowerCase();
+                    var highlightContent = divContent.replace(new RegExp(searchInput, "gi"), function(match) {
+                        return "<span class='highlight'>" + match + "</span>";
+                    });
+                    divElements[i].innerHTML = highlightContent;
+                }
+            }
+        </script>
+        <style>
+            .highlight {
+                background-color: yellow;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="search">Search : </label><input type="text" name="search" id="search" oninput="searchText()"><br><br>
+        <div id="div1"> JavaScript is a programming language that adds interactivity to your website. This happens in games, in the behavior of responses when buttons are pressed or with data entry on forms; with dynamic styling; with animation, etc. This article helps you get started with JavaScript and furthers your understanding of what is possible.  </div><br>
+        
+        <div id="div2"> JavaScript is a powerful programming language that can add interactivity to a website. It was invented by Brendan Eich. JavaScript is versatile and beginner-friendly. With more experience, you'll be able to create games, animated 2D and 3D graphics, comprehensive database-driven apps, and much more! JavaScript itself is relatively compact, yet very flexible. Developers have written a variety of tools on top of the core JavaScript language, unlocking a vast amount of functionality with minimum effort.  </div><br>
+
+        <div id="div3">JavaScript is one of the most popular modern web technologies! As your JavaScript skills grow, your websites will enter a new dimension of power and creativity.</div>
+    </body>
+</html>

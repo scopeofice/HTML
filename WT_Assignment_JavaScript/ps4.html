@@ -1,0 +1,62 @@
+<html>
+    <head><title>Employee Details</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+            }
+        </style>
+
+      
+
+<script>
+            var employees=[
+            {empid:101 , ename:"Shubham Ghodkhande" , salary: 500000 },
+            {empid:102 , ename:"Janmejay Singh" , salary: 400000 },
+            {empid:103 , ename:"Pratik Shikhavat" , salary: 200000 },
+            {empid:104 , ename:"Satish Ghadhe" , salary: 100000 },
+            ];
+            
+            
+            var str=''
+            function displayTable(){
+                str= "<table> <tr><th>Id</th><th>Name</th><th>Salary</th></tr>"
+                    for(var obj of employees){
+                        str+=`<tbody><tr><td>${obj.empid}</td><td>${obj.ename}</td><td>${obj.salary}</td></tr></tbody>`
+                    }
+                    str+="</table>"
+                    document.getElementById("mydiv").innerHTML=str;
+            }
+
+            
+        </script>
+
+     
+    
+    </head>
+    <body onload="displayTable()">
+
+        
+
+        <fieldset>
+            <legend>Employee Details</legend><br>
+            <form>
+                Enter Id : <input type="text" name="id" id="id"><br>
+                Enter Name : <input type="text" name="name" id="name"><br>
+                Enter Salary : <input type="text" name="sal" id="sal"><br>
+                <button type="button" onclick="addEmployee()">Add Employee</button> &emsp;
+                <button type="button" onclick="delEmployee()">Delete Employee</button> &emsp;
+                <button type="button" onclick="updateEmployee()">Update Detail</button> &emsp;
+                
+            </form>
+        </fieldset>
+           
+      <div id="mydiv"></div>
+
+    </body>
+</html>

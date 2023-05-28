@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Sorting Name</title>
+        <script>
+            function sortNames(){                
+                    var inputNames=document.getElementById('names').value;
+                    var nameArray=inputNames.split(",");
+                    var flag=validateCount(nameArray);
+                if(flag){
+                    nameArray.sort();
+                    document.getElementById('mydiv').innerHTML+=nameArray.join(", ");
+                }
+            }
+            function validateCount(array){
+                alert(array.length);
+                if(array.length !== 6){
+                    document.getElementById('err').innerHTML="Pleas enter 6 names.";
+                return false;
+                }
+                document.getElementById('err').innerHTML="";
+                    return true;
+            }
+        </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Sorting Names</legend><br>
+            <form>
+                Enter Names : <input type="text" name="names" id="names"><span>*</span><span id="err"></span><br>
+                <button type="button" onclick="sortNames()">Sort</button>
+            </form>
+        </fieldset>
+        <div id="mydiv"></div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passing Object</title>
+    <script>
+        function ashu() {
+            var person = {
+                name: "Ashu",
+                age: 25,
+            };
+
+            var str = `<button type="button" onclick="displayObject({name: '${person.name}', age: ${person.age}});">Edit</button>`;
+            document.getElementById("my").innerHTML = str;
+        }
+
+        function displayObject(personObject) {
+            var content = "Name: " + personObject.name + "<br>";
+            content += "Age: " + personObject.age + "<br>";
+
+            document.getElementById("mydiv").innerHTML = content;
+        }
+    </script>
+</head>
+<body onload="ashu()">
+    <div id="my"></div>
+    <div id="mydiv"></div>
+</body>
+</html>

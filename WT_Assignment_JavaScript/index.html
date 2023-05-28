@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mydiv"></div>
+    <script>
+        let today
+let month
+let date
+let year
+        function getDate(){
+             today=new Date()
+             month=today.getDay()
+             date=today.getDate()
+             year=today.getFullYear()
+            // alert(month)
+        }
+        getDate()
+        document.getElementById("mydiv").innerHTML="date: "+date+ " "+ month+" "+ year
+    </script>
+</body>
+</html>

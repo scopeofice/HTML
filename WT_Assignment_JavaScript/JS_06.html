@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <style>
+            span{
+                color: red;
+            }
+        </style>
+        <script>
+            function digitSum(){
+                var flag=validateNum((document.getElementById("num").value));
+                if(flag){
+                var a=parseInt(document.getElementById("num").value);
+                var sum=0;
+                var rem=0;
+                while(a>0){
+                    rem=a%10;
+                    sum+=rem;
+                    a=Math.floor(a/10);
+                }
+                document.getElementById('mydiv').innerHTML= "Sum = "+sum;
+
+                }
+            }
+
+            function validateNum(numb){
+                var count=0;
+                var temp=numb;
+                while(temp>0){
+                    temp=Math.floor(temp/10);
+                    count++;
+                }
+            if(numb==="" || isNaN(numb) || count!==5){
+                document.getElementById("err").innerHTML="please enter valid number";
+                return false;
+            }
+            document.getElementById("err").innerHTML="";
+            return true;
+        }
+        </script>
+    </head>
+    <body>
+    
+        <label for="num">Enter number:</label>
+        <input type="text" name="num" id="num"><span>*</span><span id="err"></span><br>
+        <button type="button" onclick="digitSum()">answer</button>
+        <div id="mydiv"></div>
+    </body>
+</html>

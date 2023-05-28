@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Registration Details</title>
+    </head>
+    <body style="color: white; background-color: rgb(0, 0, 126);">
+        <fieldset style="margin: auto; width: 600px;">
+            <legend>Registration Details</legend><br>
+            <table align="center" style="height: 300px;">
+                <tr>
+                    <td align="right"><label for="uni">University : </label></td>
+                    <td><input type="text" name="uni" id="uni" required autofocus></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="ins">Institute : </label></td>
+                    <td><input type="text" name="ins" id="ins" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="branch">Brance : </label></td>
+                    <td><select name="branch" id="branch">
+                        <option value="test">--select--</option>
+                        <option value="mech">Mechanical</option>
+                        <option value="civil">Civil</option>
+                        <option value="cse">Computer Science</option>
+                        <option value="elc">Electrical</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="deg">Degree : </label></td>
+                    <td><select name="deg" id="deg">
+                        <option value="test">--select--</option>
+                        <option value="btec">BTech</option>
+                        <option value="mtec">MTech</option>
+                    </select> &nbsp;
+                    <input type="radio" name="pur" id="pur">
+                    <label for="pur"> Pursuing </label> &nbsp;
+                    <input type="radio" name="comp" id="comp">
+                    <label for="comp"> Completed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="avg">Average CPI : </label></td>
+                    <td><input type="number" name="avg" id="avg" style="width: 60px;" max="10" min="1"> &nbsp;
+                        <label for="sem"> Upto </label>
+                        <input type="number" name="sem" id="sem" min="1" max="8">
+                        <label>Th Semester</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="exp">Experience : </label></td>
+                    <td><input type="number" name="exp" id="exp" min="0" max="30">
+                        <label>Year</label>
+                    </td>   
+                </tr>
+                <tr>
+                    <td align="right"><label for="link">Your Website Or Blog : </label></td>
+                    <td><input type="url" name="link" id="link" value="http://"></td>
+                </tr>
+            </table><br>
+        </fieldset>
+    </body>
+</html>

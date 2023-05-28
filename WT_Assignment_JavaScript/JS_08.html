@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <script>
+            function pow(){
+                var flag1=validatedata1(document.getElementById("base").value);
+                var flag2=validatedata(document.getElementById("power").value);
+                if(flag1&&flag2){
+                    var a=document.getElementById("base").value;
+                    var b=document.getElementById("power").value;
+                    var p=1;
+                    var i=0;
+                    while(i<b){
+                        p*=a;
+                        i++;
+                    }
+                    document.getElementById('mydiv').innerHTML=p;
+
+                }
+                
+
+                
+            }
+            function validatedata1(num1){
+                if(num1===""||isNaN(num1)){
+                    document.getElementById("abc").innerHTML="Enter valid base";
+                    return false;
+                }document.getElementById("abc").innerHTML="";
+                return true;
+
+            }
+            function validatedata(num){
+                if(num===""||isNaN(num)){
+                    document.getElementById("xyz").innerHTML="Enter valid base";
+                    return false;
+                }document.getElementById("abc").innerHTML="";
+                return true;
+
+            }
+        </script>
+    </head>
+    
+        <body>
+            <label for="base">Enter base:</label>
+            <input type="text" name="base" id="base"><span>*</span><span id="abc"></span><br>
+            <label for="power">Enter power</label>
+            <input type="text" name="power" id="power"><span>*</span><span id="xyz"></span><br>
+            <button type="button" onclick="pow()">Answer</button>
+            <div id="mydiv"></div>
+        </body>
+    
+</html>

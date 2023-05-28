@@ -1,0 +1,22 @@
+<html>
+    <head><title>Get Week Day</title>
+    <script>
+        function getWeekDay(date){
+
+            const day=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+            const newDate=new Date(document.getElementById('d').value);
+            const d=day[newDate.getDay()];
+            alert(d);
+        }
+    </script>
+    </head>
+    <body>
+        <fieldset style="width: 300px;margin: 0 auto;">
+            <legend>Enter Date</legend><br>
+            <form>
+                Enter Date : <input type="date" name="d" id="d">
+                <button type="button" onclick="getWeekDay(event)">Get Day</button><br>
+            </form>
+        </fieldset>
+    </body>
+</html>

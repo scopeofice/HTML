@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Employee Details</title>
+    <style>
+        .employee {
+            border: 1px solid black;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="employeeList"></div>
+
+    <form>
+        <fieldset>
+            <legend>Add Employee</legend>
+            <label for="empid">Employee ID:</label>
+            <input type="text" id="empid">
+            <br>
+            <label for="ename">Name:</label>
+            <input type="text" id="ename">
+            <br>
+            <label for="salary">Salary:</label>
+            <input type="text" id="salary">
+            <br>
+            <button type="button" onclick="addEmployee()">Add Employee</button>
+        </fieldset>
+    </form>
+
+    <script>
+        var employees = [];
+
+        function addEmployee() {
+            var empidInput = document.getElementById("empid");
+            var enameInput = document.getElementById("ename");
+            var salaryInput = document.getElementById("salary");
+
+            var employee = {
+                empid: empidInput.value,
+                ename: enameInput.value,
+                salary: salaryInput.value
+            };
+
+            employees.push(employee);
+            displayEmployees();
+            clearInputs();
+        }
+
+        function displayEmployees() {
+            var employeeList = document.getElementById("employeeList");
+            employeeList.innerHTML = "";
+
+            employees.forEach(function(employee) {
+                var employeeDiv = document.createElement("div");
+                employeeDiv.classList.add("employee");
+
+                var empidLabel = document.createElement("label");
+                empidLabel.textContent = "Employee ID: ";
+                var empidSpan = document.createElement("span");
+                empidSpan.textContent = employee.empid;
+                empidLabel.appendChild(empidSpan);
+                employeeDiv.appendChild(empidLabel);
+
+                var enameLabel = document.createElement("label");
+                enameLabel.textContent = "Name: ";
+                var enameSpan = document.createElement("span");
+                enameSpan.textContent = employee.ename;
+                enameLabel.appendChild(enameSpan);
+                employeeDiv.appendChild(enameLabel);
+
+                var salaryLabel = document.createElement("label");
+                salaryLabel.textContent = "Salary: ";
+                var salarySpan = document.createElement("span");
+                salarySpan.textContent = employee.salary;
+                salaryLabel.appendChild(salarySpan);
+                employeeDiv.appendChild(salaryLabel);
+
+                employeeList.appendChild(employeeDiv);
+            });
+        }
+
+        function clearInputs() {
+            document.getElementById("empid").value = "";
+            document.getElementById("ename").value = "";
+            document.getElementById("salary").value = "";
+        }
+    </script>
+</body>
+</html>

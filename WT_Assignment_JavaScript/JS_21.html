@@ -1,0 +1,20 @@
+<html>
+    <head><title>List of Members</title>
+        <script>
+            var arr=["Shubham","Janmejay","Pratik","Ashutosh","Satish","Sanket","Anish"];
+
+            function displayList(){
+                var str='';
+                for(var i=0;i<arr.length;i++){
+                    str+=`<li>${arr[i]}</li>`
+                }
+                document.getElementById('list').innerHTML=str;
+            }
+
+        </script>
+    </head>
+    <body onload="displayList()">
+        <h3>Members of my Group are</h3>
+        <ol id="list"></ol>
+    </body>
+</html>

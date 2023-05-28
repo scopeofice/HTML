@@ -1,0 +1,35 @@
+<html>
+    <head><title>Appointment Scheduler</title></head>
+    <style>
+        fieldset{
+            width: 600;
+        }
+    </style>
+    <body>
+        <h1>Appointment Scheduler</h1>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="nm">Name</label><br>
+            <input type="text" name="nm" id="nm" placeholder="name" required autofocus><br><br>
+            <label for="ph">Telephone number</label><br>
+            <input type="tel" name="ph" id="ph" placeholder="phone" required><br><br>
+            <label for="em">E-mail address</label><br>
+            <input type="email" name="em" id="em" placeholder="email" required><br><br>
+            <label for="dob">Date of birth</label><br>
+            <input type="date" name="dob" id="dob" required><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Appointment Request</legend>
+            <label for="rv">What is the reason for your visit?</label><br>
+            <input type="text" name="rv" id="rv" placeholder="Reason" required><br><br>
+            <label for="cp">Current pain level</label><br>
+            <input type="range" name="cp" id="cp" ><br><br>
+            <label for="pdate">Preferred date</label><br>
+            <input type="date" name="pdate" id="pdate" ><br><br>
+            <label for="ptime">Preferred time</label><br>
+            <input type="time" name="ptime" id="ptime" ><br><br>
+        </fieldset><br>
+        &nbsp;<button type="submit">Submit</button>
+    
+    </body>
+</html>

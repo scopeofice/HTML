@@ -1,0 +1,89 @@
+<html>
+    <head><title>Login</title>
+        <script>
+            function showpasswd(){
+                var pass=document.getElementById('passwd');
+                if(pass.type==='password'){
+                    pass.type='text';
+                }else{
+                    pass.type='password';
+                }
+            }
+        </script>
+    <style>
+        body{
+            color: white;
+            background-color: black;
+        }
+        input{
+            background-color: black;
+            color: white;
+        }
+        legend{
+            background-color: blue;
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+        fieldset{
+            border: 4px solid blue;
+            border-radius: 20px;
+            width: 500px;
+        }
+        button{
+            color: white;
+            background-color: blue;
+            border: 3px solid blue;
+            border-radius: 5px;
+            margin:0% 30% ;
+        }
+    </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Name and address</legend><br>
+            <table>
+                <tr>
+                    <td align="right"><label for="ssn">SSN : </label></td>
+                    <td><input type="text" name="ssn" id="ssn" required autofocus></td>
+                    <td style="background-color: blue;border: 2px solid blue;border-radius: 5px;"> Fill in name and address</td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="nm">Full name : </label></td>
+                    <td><input type="text" name="nm" id="nm" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="san">Street and number : </label></td>
+                    <td><input type="text" name="san" id="san" required></td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="cty">City : </label></td>
+                    <td><input type="text" name="cty" id="cty" required></td>
+                </tr>
+            </table><br>
+        </fieldset>
+        <br>
+        <fieldset style="width: 300px;">
+            <legend>Username and Password</legend><br>
+            <table align="center">
+            
+                <tr>
+                    <td align="right"><label for="username">Username : </label></td>
+                    <td><input type="text" name="username" id="username"
+                         autofocus placeholder="username" minlength="3" maxlength="30"
+                         pattern="[A-Za-z]+[@#$%][A-Za-z]"> </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="passwd">Password : </label></td>
+                    <td><input type="password" name="passwd" id="passwd" 
+                        placeholder="password" minlength="8" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="checkbox" name="showp" id="showp" onclick="showpasswd()">
+                    <label for="showp"> show password</label></td>
+                </tr>
+                </table><br>
+        </fieldset><br>
+        <button type="submit">Register</button>
+    </body>
+</html>
