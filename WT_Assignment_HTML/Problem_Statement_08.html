@@ -1,0 +1,42 @@
+<html>
+    <header><title>Feedback</title></header>
+    <style>
+        .mandatory {
+          color: red;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>Feedback Form</h1>
+      <p>Please provide your feedback on any problems or difficulties you faced while purchasing items on our sports website.</p>
+      
+      <form action="submit_feedback.php" method="POST">
+        <label for="problem_type">Type of Problem<span class="mandatory">*</span>:</label><br>
+        <select id="problem_type" name="problem_type" required>
+          <option value="technical">Technical Issue</option>
+          <option value="unavailable_product">Product Not Available</option>
+          <option value="missing_information">Missing Product Information</option>
+        </select><br><br>
+        
+        <label for="username">Username<span class="mandatory">*</span>:</label><br>
+        <input type="text" id="username" name="username" required autofocus><br><br>
+        
+        <label for="email">Email<span class="mandatory">*</span>:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="location">Location<span class="mandatory">*</span>:</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+        
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+        
+        <label for="problem_description">Description of the Problem<span class="mandatory">*</span>:</label><br>
+        <textarea id="problem_description" name="problem_description" rows="4" required></textarea><br><br>
+        
+        <input type="checkbox" id="problem_solved" name="problem_solved"><label for="problem_solved">Notification of Problem Solved:</label><br><br>
+        
+        
+        <button type="submit">Submit</button>
+      </form>
+    </body>
+    </html>

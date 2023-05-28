@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PS05</title>
+</head>
+<body>
+    <form>
+    <table bgcolor="pink" border="1px" cellspacing="5px">
+        <tr>
+            <td><label for="ename">Name</label></td>
+            <td><input type="text" name="ename" id="ename" value="ename" autofocus minlength="3" maxlength="30" pattern="[A-Za-z]+[@#$&*][A-Za-z0-9]"></td>
+        </tr>
+        <tr>
+            <td><label for="empno">Employee code</label></td>
+            <td><input type="text" name="empno" id="empno" value="empno" minlength="4" maxlength="4" pattern="[0-9]" style="width: 5%;"></td>
+        </tr>
+        <tr>
+            <td><label>Department</label></td>
+            <td><input type="radio" name="dname" id="admin" value="admin">ADMIN<br>
+            <input type="radio" name="dname" id="HR" value="HR">HR<br>
+            <input type="radio" name="dname" id="technical" value="technical" checked>Technical<br>
+            <input type="radio" name="dname" id="Accounts" value="Accounts">Accounts</td>
+        </tr>
+        <tr>
+            <td><label for="doj">Date of joining</label></td>
+            <td><input type="date" name="doj" id="doj" value="doj"></td>
+        </tr>
+        <tr>
+            <td><label for="add">Address</label></td>
+            <td><textarea name="add" id="add" rows="3" style="width: 95%;"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="tpa">Training Programs Attended</label></td>
+            <td><input type="checkbox" name="tpa" id="HTML/DHTML" value="HTML/DHTML">HTML/DHTML <br>
+            <input type="checkbox" name="tpa" id="Java" value="Java">Java <br>
+            <input type="checkbox" name="tpa" id="Client/Server" value="Client/Server">Client/Server <br>
+            <input type="checkbox" name="tpa" id=".net" value=".net">.net </td>
+        </tr>
+        <tr>
+            <td><label>Trining Programs need to attend</label></td>
+        <td><select name="Training program" id="tpna">
+            <option value="HTML">HTML</option>
+            <option value="Java">Java</option>
+            <option value="C++">C++</option>
+            <option value="Oracle">Oracle</option>
+        </select>
+        </td>
+        </tr>
+        <tr>
+            <td><label>Send information at</label></td>
+            <td><a href="mailto:iacsd@gmail.com">iacsd@gmail.com</a></td>
+        </tr>
+        
+    </table>
+</form>
+</body>
+</html>
