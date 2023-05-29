@@ -13,9 +13,9 @@
                 }
             }
             function validateUser(user){
-                var pattern=new RegExp('[A-Za-z]+');
-                if(user.trim()!=="" && user.test(pattern)){
-                    if(user.length()>6 && user.length()<10){
+                var pattern=/^[A-Za-z]+$/;
+                if(user.trim()!=="" && pattern.test(user)){
+                    if(user.length>6 && user.length<10){
                         document.getElementById('err1').innerHTML="";
                         return true;
                     }else{
@@ -27,13 +27,14 @@
                 return false;
             }
             function validatePass(password){
-                var patt=new RegExp('#.*\\d');
-                if(password.trim()!=='' && password.test(patt)){
-                    if(password.length()>8){
+                var patt = /^(?=.*\d)(?=.*#).{8,}$/;
+                if(password.trim()!=='' && patt.test(password)){
+                    if(password.length>8){
                         document.getElementById('err2').innerHTML="";
                         return true;
                     }else{
                         document.getElementById('err2').innerHTML="Password cannot be less than 8 characters";
+                        return false;
                     }
                 }else{
                     document.getElementById('err2').innerHTML="Invalid password";
@@ -46,7 +47,7 @@
         
             <form id="page">
                 Username : <input type="text" name="unm" id="unm"><span>*</span><span id="err1"></span><br><br>
-                Password : <input type="text" name="pwd" id="pwd"><span>*</span><span id="err2"></span><br><br>
+                Password : <input type="password" name="pwd" id="pwd"><span>*</span><span id="err2"></span><br><br>
                 
                 <button type="button" onclick="validateInfo()">Login</button>
             </form>
