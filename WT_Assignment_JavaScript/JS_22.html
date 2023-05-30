@@ -5,13 +5,12 @@
             function searchText(){
                 var searchInput=document.getElementById('search').value.toLowerCase();
                 var divElements=document.getElementsByTagName('div');
+               
                 var pattern=new RegExp(searchInput,'gi');
+                
                 for(var i=0;i<divElements.length;i++){
                     var divContent=divElements[i].textContent.toLowerCase();
-                    var highlightContent=divContent.replace(pattern,function(match){
-                        return '<span>'+match+'</span>';
-                    });
-                    divElements[i].innerHTML=highlightContent;
+                    var highlightContent=divContent.replace(pattern,function(match){ return '<span>'+match+'</span>';});divElements[i].innerHTML=highlightContent;
                 }
             }
         </script>
