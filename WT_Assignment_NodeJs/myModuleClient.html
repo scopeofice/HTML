@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>My Module Client</title>
+        <script src="./myModuleClient.html"></script>
+        <script>
+            const mymodule=require('./mymodule');
+            function porcessForm(){
+                const number=parseInt(document.getElementById('num').value);
+                var fact=mymodule.factorial(number);
+                var prime=mymodule.myprime(number);
+                var table=mymodule.printable(number);
+
+                document.getElementById('mydiv').innerHTML=fact+" "+prime+" "+table;
+            }
+        </script>
+    </head>
+    <body>
+        <form onsubmit="porcessForm()">
+            Enter a Number : <input type="number" name="num" id="num"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="mydiv"></div>
+    </body>
+</html>

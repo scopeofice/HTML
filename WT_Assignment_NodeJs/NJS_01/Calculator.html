@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <title>Calculator</title>
+
+    <script src="./jquery.js"></script>
+    <!-- <script src="./calc.js"></script> -->
+
+    <script>
+        const calc = {
+        add: function(a, b) {
+          return a + b;
+        },
+        sub: function(a, b) {
+          return a - b;
+        },
+        div: function(a, b) {
+          return a / b;
+        },
+        mul: function(a, b) {
+          return a * b;
+        },
+        sqr: function(a) {
+          return a * a;
+        },
+        sum: function(...numbers) {
+          return numbers.reduce((total, num) => total + num, 0);
+        }
+      };
+      $(document).ready(function() {
+        $('#cform').submit(function(event) {
+            alert('c')
+          event.preventDefault();
+          const num1 = parseFloat($('#a').val());
+          const num2 = parseFloat($('#b').val());
+alert(num1)
+          const sum = calc.add(num1, num2);
+          const diff = calc.sub(num1, num2);
+          const product = calc.mul(num1, num2);
+          const divide = calc.div(num1, num2);
+          const square1 = calc.sqr(num1);
+          const square2 = calc.sqr(num2);
+          alert(sum)
+
+          $('#mydiv').html(
+            `Sum: ${sum}<br>
+            Difference: ${diff}<br>
+            Product: ${product}<br>
+            Division: ${divide}<br>
+            Square of num1: ${square1}<br>
+            Square of num2: ${square2}<br>`
+          );
+
+          const numbers = $('#d').val().split(',').map(Number);
+          const sumOfNumbers = calc.sum(...numbers);
+
+          $('#mydiv1').html(`Sum of Numbers: ${sumOfNumbers}`);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Calculator</legend><br>
+      <form action="/submit-data" method="get">
+        Enter num1: <input type="number" name="a" id="a"><br>
+        Enter num2: <input type="number" name="b" id="b"><br>
+        Enter multiple numbers (comma-separated): <input type="text" name="d" id="d"><br>
+        <button type="submit">Enter</button><br>
+      </form>
+      <div id="mydiv"></div>
+      <div id="mydiv1"></div>
+    </fieldset>
+  </body>
+</html>
