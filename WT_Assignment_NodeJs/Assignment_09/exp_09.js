@@ -13,19 +13,19 @@ const users = [
   { username: 'user3', password: 'password3' }
 ];
 
-app.get('/validateuser', function(req, res) {
+app.get('/validateuser', function(req, resp) {
     const { uname, passwd } = req.query;
   
     if (!uname || !passwd) {
-      res.sendFile(path.join(__dirname, 'failure.html'));
+      resp.sendFile(path.join(__dirname, 'failure.html'));
     } else if (passwd.length < 6) {
-      res.sendFile(path.join(__dirname, 'failure.html'));
+      resp.sendFile(path.join(__dirname, 'failure.html'));
     } else {
       const user = users.find(u => u.username === uname && u.password === passwd);
       if (user) {
-        res.sendFile(path.join(__dirname, 'success.html'));
+        resp.sendFile(path.join(__dirname, 'success.html'));
       } else {
-        res.sendFile(path.join(__dirname, 'failure.html'));
+        resp.sendFile(path.join(__dirname, 'failure.html'));
       }
     }
   });
