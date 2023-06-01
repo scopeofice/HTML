@@ -3,8 +3,9 @@ fs.readFile("mydata.txt",function(err,data){
     if(err){
         console.log("error occured",err)
     }else{
-        for(var i=1;i<=data.toString().split("\n").length;i++){
-            console.log("This is line : "+i);
+        var arr=data.toString().split("\n")
+        for(var i=0;i<arr.length;i++){
+            console.log((i+1)+" "+arr[i]);
         }
     }
 });
