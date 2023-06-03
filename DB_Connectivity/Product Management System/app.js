@@ -21,7 +21,7 @@ app.use('/image',express.static(path.join(__dirname,'public/image')))
 app.use('/',r)
 
 //start server
-app.listen(3007,function(){
-    console.log('server 3007')
+app.listen(3008,function(){
+    console.log('server 3008')
 })
 module.exports=app;
