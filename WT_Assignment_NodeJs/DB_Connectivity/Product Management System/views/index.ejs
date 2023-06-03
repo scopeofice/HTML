@@ -1,0 +1,32 @@
+<html>
+    <head><title>Product</title></head>
+    <body>
+        <header><h1>Product Management System</h1></header>
+        <form action="/displayAddForm" method="get">
+            <button type="submit">Add new Product</button>
+            <table border="2">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0;i<productData.length;i++) {%>
+                        <tr>
+                            <td> <%= productData[i].pid %> </td>
+                            <td> <%= productData[i].pname %> </td>
+                            <td> <%= productData[i].price %></td>
+                            <td>
+                                <a href="/edit/ <%= productData[i].pid %>" >Edit</a>
+                                <a href="/delete/ <%= productData[i].pid %>">Delete</a>
+                            </td>
+                        </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
