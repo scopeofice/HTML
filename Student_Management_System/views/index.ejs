@@ -1,0 +1,33 @@
+<html>
+    <head><title>Student Table</title>
+        
+    </head>
+    <body>
+        <h1>Student Management System</h1>
+        <form action="/displayform" method="get">
+            <button type="submit">Add Student</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Marks</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0;i<student.length;i++) {%>
+                    <tr>
+                        <td><%=student[i].sid %></td>
+                        <td><%=student[i].sname %></td>
+                        <td><%=student[i].marks %></td>
+                        <td><a href="/edit/<%= student[i].sid %>">Edit</a>
+                            <a href="/delete/<%= student[i].sid %>">Delete</a>
+                        </td>
+                    </tr>
+                    <%}%>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>

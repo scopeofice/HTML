@@ -1,0 +1,17 @@
+<html>
+    <head></head>
+    <body>
+        <form action="/update-student" method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Student Id : <input type="text" name="sid" id="sid" value="<%=student.sid%>" readonly></td>
+                        <td>Student Name : <input type="text" name="sname" id="sname" value="<%=student.sname%>"></td>
+                        <td>Student Marks : <input type="text" name="marks" id="marks" value="<%=student.marks%>"></td>
+                        <td><button type="submit">Update Student</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </body>
+</html>
