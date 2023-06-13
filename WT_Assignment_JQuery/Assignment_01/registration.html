@@ -1,0 +1,80 @@
+<html>
+    <head><title>Employee Registration Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        .highlight{
+            background-color: yellow;
+        }
+        .success{
+            background-color: cyan;
+        }
+    </style>
+    
+    <script>
+
+            $(document).ready(function(){
+                $('#name').focus(function(){
+                    $(this).addClass('highlight')
+                })
+                $('#name').blur(function(){
+                    $(this).removeClass('highlight')
+                })
+                $('#btn').click(function(){
+                    var username=$('#name').val();
+                    if(username.startsWith('An')){
+                        alert('Name starts with An');
+                        $('#myForm').addClass('success')
+                    }
+                })
+            })
+    </script>
+    </head>
+    <body>
+        <form id="myForm">
+            <table>
+                <thead>
+                    <tr style="column-span: 2;">
+                    <th>Employee Registration From</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="name">Name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="name" id="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email</label>
+                        </td>
+                        <td>
+                            <input type="text" name="email" id="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="sal">Salary</label>
+                        </td>
+                        <td>
+                            <input type="text" name="sal" id="sal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" id="btn" name="btn">Submit</button>
+                        </td>
+                        <td>
+                            <button type="button" id="btn" name="btn">cancle</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </form>
+    </body>
+</html>

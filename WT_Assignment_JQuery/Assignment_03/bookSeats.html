@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reservation Form</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  $('#bookButton').click(function() {
+    var seats = parseInt($('#seats').val());
+    var form = $('#reservationForm');
+
+    if (seats > 0) {
+      $('.guestName').remove();
+      for (var i = 1; i <= seats; i++) {
+        var textBox = $('<input>').attr({
+          type: 'text',
+          class: 'guestName',
+          placeholder: 'Guest ' + i + ' Name',
+          required: true
+        });
+        form.append(textBox);
+      }
+
+      var submitButton = $('<button>').attr({
+        type: 'button',
+        id: 'submitButton'
+      }).text('Submit');
+      form.append(submitButton);
+    }
+  });
+
+  $(document).on('click', '#submitButton', function() {
+    var name = $('#name').val();
+    var date = $('#date').val();
+    var seats = $('#seats').val();
+    var guestNames = $('.guestName').map(function() {
+      return $(this).val();
+    }).get().join(', ');
+
+    var message = 'Name: ' + name + '\nDate: ' + date + '\nNo. of Seats: ' + seats + '\nGuest Names: ' + guestNames;
+    alert(message);
+  });
+});
+
+  </script>
+</head>
+<body>
+  <h1>Reservation Form</h1>
+  <form id="reservationForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+    </div>
+    <div>
+      <label for="seats">No. of Seats:</label>
+      <input type="number" id="seats" required>
+    </div>
+    <div>
+      <button id="bookButton" type="button">Book Tickets</button>
+    </div>
+  </form>
+</body>
+</html>

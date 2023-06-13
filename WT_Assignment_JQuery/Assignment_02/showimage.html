@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+  $('#showButton').click(function() {
+    var buttonText = $(this).text();
+    var image = $('#image');
+
+    if (buttonText === 'Show') {
+      $(this).text('Hide');
+      image.removeClass('hidden');
+    } else {
+      $(this).text('Show');
+      image.addClass('hidden');
+    }
+
+    var selectedOption = $('input[name="option"]:checked').val();
+    alert('Selected option: ' + selectedOption);
+  });
+});
+
+  </script>
+</head>
+<body>
+  <h1>Form</h1>
+  <form>
+    <div>
+      <img id="image" src="./IMG20200914053952.jpg" alt="Image" width="25%">
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="option" value="Button1"> Button1
+      </label>
+      <label>
+        <input type="radio" name="option" value="Button2"> Button2
+      </label>
+    </div>
+    <div>
+      <button id="showButton" type="button">Show</button>
+    </div>
+  </form>
+</body>
+</html>
